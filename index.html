@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran: Iklan, Slogan, dan Poster - Kelas VIII SMP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Bebas+Neue&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2563eb',
+                            purple: '#7c3aed',
+                            amber: '#f59e0b',
+                            emerald: '#10b981',
+                            rose: '#f43f5e'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        poster: ['Bebas Neue', 'sans-serif'],
+                        handwritten: ['Caveat', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .active-tab {
+            border-bottom: 4px solid #2563eb;
+            color: #2563eb;
+            font-weight: 700;
+        }
+        .canvas-bg-grid {
+            background-size: 20px 20px;
+            background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 flex flex-col min-h-screen selection:bg-blue-200">
+
+    <!-- Header App -->
+    <header class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/20 p-2.5 rounded-xl backdrop-blur-md">
+                    <i class="fa-solid font-bold fa-bullhorn text-amber-300 text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-heading font-bold text-lg sm:text-xl tracking-tight leading-tight">Ruang Bahasa VIII</h1>
+                    <p class="text-xs text-blue-100 flex items-center gap-1.5">
+                        <span>Iklan, Slogan, & Poster</span>
+                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        <span class="text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono">Modul Interaktif</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Main Navigation Buttons -->
+            <nav class="flex space-x-1 sm:space-x-2 bg-black/20 p-1 rounded-2xl backdrop-blur-md text-xs sm:text-sm font-medium w-full sm:w-auto justify-center">
+                <button onclick="switchTab('materi')" id="btn-materi" class="nav-btn px-3 py-2 rounded-xl transition-all flex items-center gap-2 bg-white text-blue-800 shadow">
+                    <i class="fa-solid fa-book-open text-blue-600"></i> 
+                    <span>1. Materi</span>
+                </button>
+                <button onclick="switchTab('kuis')" id="btn-kuis" class="nav-btn px-3 py-2 rounded-xl transition-all flex items-center gap-2 text-white hover:bg-white/10">
+                    <i class="fa-solid fa-brain text-amber-300"></i> 
+                    <span>2. Analisis & Kuis</span>
+                </button>
+                <button onclick="switchTab('studio')" id="btn-studio" class="nav-btn px-3 py-2 rounded-xl transition-all flex items-center gap-2 text-white hover:bg-white/10">
+                    <i class="fa-solid fa-wand-magic-sparkles text-emerald-300"></i> 
+                    <span>3. Studio Pembuat</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- ================= SECTION 1: MATERI INTERAKTIF ================= -->
+        <section id="tab-materi" class="space-y-6">
+            <!-- Banner Tujuan Pembelajaran -->
+            <div class="bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl p-4 sm:p-6 text-white shadow-md relative overflow-hidden">
+                <div class="relative z-10">
+                    <span class="bg-black/20 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2 inline-block">
+                        🎯 Tujuan Pembelajaran
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-heading font-bold mb-2">Menguasai Media Komunikasi Visual & Verbal</h2>
+                    <ul class="grid grid-cols-1 md:grid-cols-3 gap-2 text-sm text-amber-50">
+                        <li class="flex items-center gap-2 bg-white/10 p-2 rounded-lg">
+                            <i class="fa-solid fa-check-circle text-emerald-300"></i> Mengidentifikasi Unsur-Unsur
+                        </li>
+                        <li class="flex items-center gap-2 bg-white/10 p-2 rounded-lg">
+                            <i class="fa-solid fa-check-circle text-emerald-300"></i> Menganalisis Perbedaan
+                        </li>
+                        <li class="flex items-center gap-2 bg-white/10 p-2 rounded-lg">
+                            <i class="fa-solid fa-check-circle text-emerald-300"></i> Merancang Karya Kreatif
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Interactive Concept Selector -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1: Iklan -->
+                <div onclick="showConceptDetail('iklan')" id="card-concept-iklan" class="concept-card bg-white rounded-2xl p-6 shadow-sm border-2 border-blue-500 cursor-pointer hover:shadow-md transition-all relative overflow-hidden group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-tv"></i>
+                        </div>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-semibold px-2.5 py-1 rounded-full">Lengkap</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-800 mb-1">IKLAN</h3>
+                    <p class="text-xs text-slate-500 mb-4">Teks persuasif yang memadukan unsur gambar, kata-kata, gerak, dan suara.</p>
+                    <div class="flex flex-wrap gap-1 text-[11px]">
+                        <span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Teks</span>
+                        <span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Gambar</span>
+                        <span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Suara</span>
+                        <span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Gerak</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Slogan -->
+                <div onclick="showConceptDetail('slogan')" id="card-concept-slogan" class="concept-card bg-white rounded-2xl p-6 shadow-sm border-2 border-slate-200 hover:border-indigo-400 cursor-pointer hover:shadow-md transition-all relative overflow-hidden group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <span class="text-xs bg-indigo-50 text-indigo-700 font-semibold px-2.5 py-1 rounded-full">Kata-kata Motif</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-800 mb-1">SLOGAN</h3>
+                    <p class="text-xs text-slate-500 mb-4">Perkataan atau kalimat pendek yang menarik, mencolok, dan mudah diingat.</p>
+                    <div class="flex flex-wrap gap-1 text-[11px]">
+                        <span class="bg-indigo-50 text-indigo-700 font-medium px-2 py-0.5 rounded">Utamakan Kata-kata</span>
+                        <span class="bg-slate-100 text-slate-400 px-2 py-0.5 rounded line-through">Gambar Jarang</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Poster -->
+                <div onclick="showConceptDetail('poster')" id="card-concept-poster" class="concept-card bg-white rounded-2xl p-6 shadow-sm border-2 border-slate-200 hover:border-purple-400 cursor-pointer hover:shadow-md transition-all relative overflow-hidden group">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-image"></i>
+                        </div>
+                        <span class="text-xs bg-purple-50 text-purple-700 font-semibold px-2.5 py-1 rounded-full">Visual Cetak</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-800 mb-1">POSTER</h3>
+                    <p class="text-xs text-slate-500 mb-4">Plakat berupa kata-kata dan gambar yang dipajang di tempat-tempat umum.</p>
+                    <div class="flex flex-wrap gap-1 text-[11px]">
+                        <span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Gambar Kuat</span>
+                        <span class="bg-slate-100 text-slate-700 px-2 py-0.5 rounded">Kata-kata Ringkas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detail Pane Dynamic Display -->
+            <div id="concept-detail-box" class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <!-- Content loaded dynamically via JavaScript -->
+            </div>
+
+            <!-- Interactive Comparison Table Matrix -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 overflow-hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-heading font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-table-cells text-indigo-600"></i> Matriks Perbedaan Unsur Unsur
+                    </h3>
+                    <span class="text-xs text-slate-500 italic">*Sentuh / Sorot baris untuk membandingkan</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 border-b border-slate-200 font-heading">
+                                <th class="p-3.5 rounded-l-xl">Bentuk Teks</th>
+                                <th class="p-3.5 text-center">Unsur Gambar</th>
+                                <th class="p-3.5 text-center">Unsur Kata-kata</th>
+                                <th class="p-3.5 text-center">Unsur Gerak</th>
+                                <th class="p-3.5 text-center">Unsur Suara</th>
+                                <th class="p-3.5 rounded-r-xl">Tujuan Utama</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-blue-50/50 transition-colors">
+                                <td class="p-3.5 font-bold text-blue-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-tv text-blue-500"></i> Iklan
+                                </td>
+                                <td class="p-3.5 text-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i></td>
+                                <td class="p-3.5 text-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i></td>
+                                <td class="p-3.5 text-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i> (Media TV/Digital)</td>
+                                <td class="p-3.5 text-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i> (Radio/TV/Digital)</td>
+                                <td class="p-3.5 text-slate-600 text-xs">Membujuk khalayak membeli produk atau menggunakan jasa/layanan.</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50/50 transition-colors">
+                                <td class="p-3.5 font-bold text-indigo-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-quote-left text-indigo-500"></i> Slogan
+                                </td>
+                                <td class="p-3.5 text-center text-slate-300"><i class="fa-solid fa-circle-minus text-lg"></i> (Pelengkap)</td>
+                                <td class="p-3.5 text-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i> (Dominan)</td>
+                                <td class="p-3.5 text-center text-slate-300"><i class="fa-solid fa-circle-xmark text-lg"></i></td>
+                                <td class="p-3.5 text-center text-slate-300"><i class="fa-solid fa-circle-xmark text-lg"></i></td>
+                                <td class="p-3.5 text-slate-600 text-xs">Menanamkan prinsip, motivasi, ideologi, atau kesadaran.</td>
+                            </tr>
+                            <tr class="hover:bg-purple-50/50 transition-colors">
+                                <td class="p-3.5 font-bold text-purple-700 flex items-center gap-2">
+                                    <i class="fa-solid fa-image text-purple-500"></i> Poster
+                                </td>
+                                <td class="p-3.5 text-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i> (Dominan)</td>
+                                <td class="p-3.5 text-center text-emerald-600"><i class="fa-solid fa-circle-check text-lg"></i> (Ringkas)</td>
+                                <td class="p-3.5 text-center text-slate-300"><i class="fa-solid fa-circle-xmark text-lg"></i></td>
+                                <td class="p-3.5 text-center text-slate-300"><i class="fa-solid fa-circle-xmark text-lg"></i></td>
+                                <td class="p-3.5 text-slate-600 text-xs">Imbauan/pengumuman visual menarik di tempat publik.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 2: ANALISIS & KUIS DETEKTIF ================= -->
+        <section id="tab-kuis" class="space-y-6 hidden">
+            <!-- Quiz Card Header -->
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div>
+                    <h2 class="text-2xl font-heading font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-user-secret text-amber-500"></i> Detektif Teks: Uji Analisis Poin
+                    </h2>
+                    <p class="text-slate-500 text-sm">Identifikasi kalimat dan contoh kasus berikut. Tentukan apakah tergolong Iklan, Slogan, atau Poster!</p>
+                </div>
+                <!-- Score Display -->
+                <div class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-2xl flex items-center gap-4 shadow-md w-full md:w-auto justify-center">
+                    <div class="text-center">
+                        <span class="text-[10px] uppercase tracking-wider block opacity-90">Skor Anda</span>
+                        <span id="quiz-score" class="text-2xl font-bold font-mono">0</span>
+                    </div>
+                    <div class="h-8 w-px bg-white/30"></div>
+                    <div class="text-center">
+                        <span class="text-[10px] uppercase tracking-wider block opacity-90">Soal</span>
+                        <span id="quiz-progress" class="text-sm font-semibold">1 / 5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Main Box -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md border border-slate-200 relative overflow-hidden" id="quiz-container">
+                <!-- Dynamic Quiz Content Rendered via JS -->
+            </div>
+        </section>
+
+        <!-- ================= SECTION 3: STUDIO KREATIF (RANCANG KARYA) ================= -->
+        <section id="tab-studio" class="space-y-6 hidden">
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-2 mb-4">
+                    <div>
+                        <h2 class="text-xl sm:text-2xl font-heading font-bold text-slate-800 flex items-center gap-2">
+                            <i class="fa-solid fa-palette text-emerald-500"></i> Studio Rancang Iklan, Slogan, & Poster
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-500">Buat gagasan media komunikasimu secara digital & presentasikan di depan kelas!</p>
+                    </div>
+                    <div class="flex gap-2 w-full md:w-auto">
+                        <button onclick="resetStudio()" class="text-xs px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl transition flex items-center gap-1.5">
+                            <i class="fa-solid fa-rotate-left"></i> Reset Design
+                        </button>
+                        <button onclick="window.print()" class="text-xs px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition flex items-center gap-1.5 shadow">
+                            <i class="fa-solid fa-print"></i> Cetak / Simpan
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Studio Workspace Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    
+                    <!-- Control Controls (Left Panel) -->
+                    <div class="lg:col-span-5 space-y-4 bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200">
+                        <h3 class="font-heading font-bold text-sm text-slate-700 flex items-center gap-2 border-b border-slate-200 pb-2">
+                            <i class="fa-solid fa-sliders text-blue-600"></i> Pengaturan Karya
+                        </h3>
+
+                        <!-- Jenis Teks -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Pilih Jenis Karya:</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" onclick="setStudioType('poster')" id="st-type-poster" class="st-type-btn p-2 rounded-xl text-xs font-semibold border-2 border-emerald-500 bg-emerald-50 text-emerald-700 flex flex-col items-center gap-1">
+                                    <i class="fa-solid fa-image text-base"></i> Poster
+                                </button>
+                                <button type="button" onclick="setStudioType('slogan')" id="st-type-slogan" class="st-type-btn p-2 rounded-xl text-xs font-semibold border-2 border-slate-200 bg-white text-slate-600 flex flex-col items-center gap-1 hover:border-slate-300">
+                                    <i class="fa-solid fa-quote-left text-base"></i> Slogan
+                                </button>
+                                <button type="button" onclick="setStudioType('iklan')" id="st-type-iklan" class="st-type-btn p-2 rounded-xl text-xs font-semibold border-2 border-slate-200 bg-white text-slate-600 flex flex-col items-center gap-1 hover:border-slate-300">
+                                    <i class="fa-solid fa-rectangle-ad text-base"></i> Iklan
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Template Presets -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Pilih Tema/Preset Cepat:</label>
+                            <select id="studio-preset" onchange="applyPreset(this.value)" class="w-full text-xs p-2.5 rounded-xl border border-slate-300 bg-white font-medium focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                                <option value="lingkungan">🌱 Tema Lingkungan (Kebersihan/Bumi)</option>
+                                <option value="pendidikan">📚 Tema Pendidikan & Literasi</option>
+                                <option value="kesehatan">🍎 Tema Kesehatan / Kantin Sehat</option>
+                                <option value="komersial">🥤 Tema Produk / Jasa Kantin</option>
+                            </select>
+                        </div>
+
+                        <!-- Judul Utama / Headline -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-headline">Judul Utama / Tagline:</label>
+                            <input type="text" id="st-headline" oninput="updateStudioPreview()" placeholder="Ketik kata utama yang menarik..." value="JAGA BUMI, JAGA MASA DEPAN!" class="w-full text-xs p-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        </div>
+
+                        <!-- Deskripsi / Pesan -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1" id="lbl-body">Pesan Tambahan / Penjelas:</label>
+                            <textarea id="st-body" oninput="updateStudioPreview()" rows="2" placeholder="Tulis rincian pesan persuasi di sini..." class="w-full text-xs p-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">Satu sampah plastik yang kau buang sembarangan merusak ribuan harapan bumi bersih.</textarea>
+                        </div>
+
+                        <!-- Pilihan Ikon Visual -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Pilih Ikon Visual Maskot:</label>
+                            <div class="flex gap-2 overflow-x-auto pb-2 hide-scrollbar">
+                                <button onclick="setStudioIcon('fa-leaf')" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-100"><i class="fa-solid fa-leaf text-emerald-600 text-lg"></i></button>
+                                <button onclick="setStudioIcon('fa-earth-americas')" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-100"><i class="fa-solid fa-earth-americas text-blue-600 text-lg"></i></button>
+                                <button onclick="setStudioIcon('fa-book-bookmark')" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-100"><i class="fa-solid fa-book-bookmark text-amber-600 text-lg"></i></button>
+                                <button onclick="setStudioIcon('fa-lightbulb')" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-100"><i class="fa-solid fa-lightbulb text-yellow-500 text-lg"></i></button>
+                                <button onclick="setStudioIcon('fa-heart-pulse')" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-100"><i class="fa-solid fa-heart-pulse text-rose-500 text-lg"></i></button>
+                                <button onclick="setStudioIcon('fa-bottle-water')" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-100"><i class="fa-solid fa-bottle-water text-cyan-600 text-lg"></i></button>
+                                <button onclick="setStudioIcon('fa-hand-holding-heart')" class="p-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-100"><i class="fa-solid fa-hand-holding-heart text-purple-600 text-lg"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Tema Warna Background -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Gaya Warna Canvas:</label>
+                            <div class="grid grid-cols-5 gap-2">
+                                <button onclick="setStudioColor('bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900 text-white')" class="h-8 rounded-lg bg-gradient-to-r from-emerald-500 to-slate-800 border-2 border-white shadow-sm"></button>
+                                <button onclick="setStudioColor('bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-900 text-white')" class="h-8 rounded-lg bg-gradient-to-r from-blue-600 to-purple-800 border-2 border-white shadow-sm"></button>
+                                <button onclick="setStudioColor('bg-gradient-to-br from-amber-500 via-orange-600 to-red-700 text-white')" class="h-8 rounded-lg bg-gradient-to-r from-amber-500 to-red-600 border-2 border-white shadow-sm"></button>
+                                <button onclick="setStudioColor('bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 text-amber-300')" class="h-8 rounded-lg bg-gradient-to-r from-slate-900 to-purple-900 border-2 border-white shadow-sm"></button>
+                                <button onclick="setStudioColor('bg-white text-slate-800 border-4 border-slate-900')" class="h-8 rounded-lg bg-white border-2 border-slate-300 shadow-sm"></button>
+                            </div>
+                        </div>
+
+                        <!-- Call to Action (Khusus Iklan/Poster) -->
+                        <div id="cta-input-group">
+                            <label class="block text-xs font-semibold text-slate-600 mb-1">Panggilan Aksi (Call to Action / Pembuat):</label>
+                            <input type="text" id="st-cta" oninput="updateStudioPreview()" value="Disajikan oleh: OSIS SMP Negeri 1" class="w-full text-xs p-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        </div>
+                    </div>
+
+                    <!-- Preview Canvas Screen (Right Panel) -->
+                    <div class="lg:col-span-7 flex flex-col items-center justify-center bg-slate-200/70 p-4 sm:p-6 rounded-2xl border border-slate-300 canvas-bg-grid min-h-[420px]">
+                        
+                        <div class="text-xs text-slate-500 mb-2 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-eye text-blue-600"></i> Pratinjau Tampilan Karya (Live Preview)
+                        </div>
+
+                        <!-- Interactive Poster Container Frame -->
+                        <div id="studio-canvas" class="w-full max-w-sm aspect-[3/4] bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900 text-white rounded-2xl shadow-2xl p-6 flex flex-col justify-between items-center text-center relative overflow-hidden transition-all duration-300">
+                            
+                            <!-- Header Type Badge -->
+                            <div class="w-full flex justify-between items-center z-10">
+                                <span id="preview-badge" class="bg-white/20 backdrop-blur-md text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full border border-white/20">
+                                    POSTER LINGKUNGAN
+                                </span>
+                                <i class="fa-solid fa-shield-halved opacity-40 text-xs"></i>
+                            </div>
+
+                            <!-- Central Icon Graphic -->
+                            <div class="my-auto z-10 flex flex-col items-center space-y-4">
+                                <div id="preview-icon-wrapper" class="w-24 h-24 sm:w-28 sm:h-28 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/30 shadow-inner my-2">
+                                    <i id="preview-icon" class="fa-solid fa-leaf text-5xl sm:text-6xl text-emerald-300"></i>
+                                </div>
+
+                                <h3 id="preview-headline" class="font-poster text-3xl sm:text-4xl tracking-wide uppercase leading-none drop-shadow-md px-2">
+                                    JAGA BUMI, JAGA MASA DEPAN!
+                                </h3>
+
+                                <p id="preview-body" class="text-xs sm:text-sm font-sans opacity-90 max-w-[260px] leading-relaxed">
+                                    Satu sampah plastik yang kau buang sembarangan merusak ribuan harapan bumi bersih.
+                                </p>
+                            </div>
+
+                            <!-- Footer / CTA -->
+                            <div id="preview-footer" class="w-full pt-3 border-t border-white/20 z-10 text-[11px] font-medium opacity-80 flex justify-center items-center gap-2">
+                                <i class="fa-solid fa-bullhorn text-xs"></i>
+                                <span id="preview-cta">Disajikan oleh: OSIS SMP Negeri 1</span>
+                            </div>
+
+                            <!-- Subtle Background Design Element -->
+                            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-white/5 rounded-full blur-xl pointer-events-none"></div>
+                        </div>
+
+                        <!-- Interactive Feedback Info -->
+                        <div id="design-checklist" class="mt-4 bg-white/90 backdrop-blur-sm p-3 rounded-xl border border-slate-200 text-xs text-slate-600 w-full max-w-sm">
+                            <span class="font-bold text-slate-800 block mb-1">🔍 Evaluasi Unsur Desain:</span>
+                            <div class="grid grid-cols-2 gap-1 text-[11px]" id="eval-check-list">
+                                <!-- Checked by JS -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Custom Modal Toast Message Container -->
+    <div id="toast-msg" class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl transition-all duration-300 transform translate-y-20 opacity-0 z-50 flex items-center gap-3 border border-slate-700">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-text" class="text-sm font-medium">Pesan pemberitahuan...</span>
+    </div>
+
+    <!-- Footer Information -->
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500 mt-auto">
+        <p>Media Pembelajaran Bahasa Indonesia SMP Kelas VIII • Materi Teks Iklan, Slogan, dan Poster</p>
+    </footer>
+
+    <script>
+        // Data Concept Details
+        const conceptDetails = {
+            iklan: {
+                title: "Teks Iklan",
+                badge: "Komposisi Komplit",
+                color: "blue",
+                desc: "Iklan merupakan media komunikasi persuasif yang digunakan untuk menawarkan barang, jasa, atau gagasan kepada khalayak ramai melalui berbagai media penyiaran atau digital.",
+                unsur: ["Unsur Gambar/Visual yang menarik", "Kata-kata/Kalimat Persuasif", "Gerak (Iklan TV/Video)", "Suara/Musik (Iklan Audio)"],
+                ciri: ["Informatif & Komersial/Non-Komersial", "Menggunakan kata ajakan (Ayo, Belilah, Gunakan)", "Menargetkan audiens tertentu"],
+                contoh: "Contoh: Iklan Minuman Nutrisi, Iklan Layanan Masyarakat Hemat Listrik."
+            },
+            slogan: {
+                title: "Slogan",
+                badge: "Kalimat Motto / Moto",
+                color: "indigo",
+                desc: "Slogan adalah perkataan atau kalimat pendek yang menarik, mencolok, dan mudah diingat untuk menjelaskan tujuan, ideologi, atau prinsip suatu organisasi/kegiatan.",
+                unsur: ["Utamakan Kepadatan Kata-kata", "Rima / Bunyi yang Emas & Mudah Diingat", "Sangat Ringkas (Tanpa Teks Panjang)", "Gambar Hanya Pelengkap / Sering Tanpa Gambar"],
+                ciri: ["Berisi motivasi atau prinsip hidup", "Daya ingat tinggi (Catchy)", "Menjadi motto identitas"],
+                contoh: "Contoh: 'Tiada Hari Tanpa Prestasi', 'Bersih Pangkal Sehat'."
+            },
+            poster: {
+                title: "Poster",
+                badge: "Plakat Visual Publik",
+                color: "purple",
+                desc: "Poster adalah lembaran pengumuman atau iklan yang dipasang di tempat umum yang memadukan gambar visual mencolok dengan teks ringkas.",
+                unsur: ["Gambar Visual Dominan & Menarik", "Kata-kata Singkat, Padat, & Jelas", "Warna Kontras Tinggi", "Dipajang di Tempat Strategis/Dinding"],
+                ciri: ["Ukuran kertas besar (A3/A2)", "Dapat dibaca sepintas dari jarak jauh", "Fokus pada pesan imbauan"],
+                contoh: "Contoh: Poster Lomba Melukis, Poster Bahaya Narkoba di Dinding Sekolah."
+            }
+        };
+
+        // Quiz Questions Data
+        const quizData = [
+            {
+                text: "'Buku Adalah Jendela Dunia, Bacalah Setiap Hari!' Teks di atas mengutamakan kata-kata singkat yang menggugah semangat belajar. Teks ini tergolong ke dalam...",
+                options: ["Iklan", "Slogan", "Poster"],
+                correct: 1,
+                explanation: "Tepat! Teks tersebut adalah Slogan karena berupa kalimat pendek bernada motivasi yang mengutamakan kata-kata serta mudah diingat."
+            },
+            {
+                text: "Sebuah lembaran besar dipasang di papan pengumuman sekolah berisi gambar bumi tersenyum dengan tulisan 'Buanglah Sampah Pada Tempatnya!' Teks media ini adalah...",
+                options: ["Iklan", "Slogan", "Poster"],
+                correct: 2,
+                explanation: "Benar! Ini adalah Poster karena memadukan visual gambar mencolok dengan kalimat imbauan ringkas untuk dipajang di tempat publik."
+            },
+            {
+                text: "Tayangan video 30 detik di media sosial menampilkan produk sepatu olahraga dengan musik energik, aksi atlet berlari, dan kalimat 'Beli Sepatu SpeedX Sekarang, Diskon 50%!'. Media tersebut dinamakan...",
+                options: ["Iklan", "Slogan", "Poster"],
+                correct: 0,
+                explanation: "Sangat baik! Ini adalah Iklan karena menggabungkan unsur gambar, kata-kata, gerak, dan suara untuk membujuk orang membeli produk."
+            },
+            {
+                text: "Manakah di antara unsur berikut yang HANYA dimiliki oleh Iklan di media elektronik (seperti TV/Youtube), tetapi TIDAK dimiliki oleh Poster cetak?",
+                options: ["Kata-kata ajakan", "Unsur Gambar", "Unsur Suara dan Gerak"],
+                correct: 2,
+                explanation: "Hebat! Unsur Suara dan Gerak hanya bisa hadir pada media elektronik/digital (Iklan), sedangkan Poster cetak bersifat statis."
+            },
+            {
+                text: "Semboyan 'Utamakan Bahasa Indonesia, Lestarikan Bahasa Daerah, Kuasai Bahasa Asing' berfungsi sebagai prinsip bersama. Hal ini merupakan fungsi dari...",
+                options: ["Slogan", "Iklan Produk", "Poster Komersial"],
+                correct: 0,
+                explanation: "Tepat Sekali! Slogan berfungsi menyampaikan prinsip, ideologi, atau motto dasar yang dipegang teguh."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let score = 0;
+
+        // Current Studio State
+        let studioState = {
+            type: 'poster',
+            color: 'bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900 text-white',
+            icon: 'fa-leaf',
+            headline: 'JAGA BUMI, JAGA MASA DEPAN!',
+            body: 'Satu sampah plastik yang kau buang sembarangan merusak ribuan harapan bumi bersih.',
+            cta: 'Disajikan oleh: OSIS SMP Negeri 1'
+        };
+
+        // Navigation Switcher
+        function switchTab(tabName) {
+            document.getElementById('tab-materi').classList.add('hidden');
+            document.getElementById('tab-kuis').classList.add('hidden');
+            document.getElementById('tab-studio').classList.add('hidden');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-blue-800', 'shadow');
+                btn.classList.add('text-white', 'hover:bg-white/10');
+            });
+
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`btn-${tabName}`);
+            activeBtn.classList.add('bg-white', 'text-blue-800', 'shadow');
+            activeBtn.classList.remove('text-white', 'hover:bg-white/10');
+
+            if (tabName === 'kuis' && currentQuizIndex === 0) {
+                renderQuiz();
+            }
+        }
+
+        // Show Concept Detail Pane
+        function showConceptDetail(key) {
+            const data = conceptDetails[key];
+            const detailBox = document.getElementById('concept-detail-box');
+
+            // Reset borders on top cards
+            document.querySelectorAll('.concept-card').forEach(c => {
+                c.classList.remove('border-blue-500', 'border-indigo-500', 'border-purple-500');
+                c.classList.add('border-slate-200');
+            });
+            document.getElementById(`card-concept-${key}`).classList.add(`border-${data.color}-500`);
+
+            detailBox.innerHTML = `
+                <div class="flex flex-wrap justify-between items-center border-b border-slate-100 pb-3 mb-4 gap-2">
+                    <h3 class="text-xl font-heading font-bold text-slate-800 flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-${data.color}-600"></span> ${data.title}
+                    </h3>
+                    <span class="bg-${data.color}-50 text-${data.color}-700 text-xs font-semibold px-3 py-1 rounded-full border border-${data.color}-200">
+                        ${data.badge}
+                    </span>
+                </div>
+                <p class="text-slate-600 text-sm mb-4 leading-relaxed">${data.desc}</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-1.5">
+                            <i class="fa-solid fa-list-check text-blue-600"></i> Unsur-Unsur Utama:
+                        </h4>
+                        <ul class="text-xs text-slate-600 space-y-1.5">
+                            ${data.unsur.map(u => `<li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-blue-500"></i> ${u}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-700 mb-2 flex items-center gap-1.5">
+                            <i class="fa-solid fa-star text-amber-500"></i> Ciri Khas Teks:
+                        </h4>
+                        <ul class="text-xs text-slate-600 space-y-1.5">
+                            ${data.ciri.map(c => `<li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> ${c}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-amber-50 border border-amber-200 text-amber-900 p-3 rounded-xl text-xs font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-lightbulb text-amber-600 text-base"></i>
+                    <span>${data.contoh}</span>
+                </div>
+            `;
+        }
+
+        // Render Interactive Quiz
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            if (currentQuizIndex >= quizData.length) {
+                // Quiz Finish View
+                container.innerHTML = `
+                    <div class="text-center py-8 space-y-4">
+                        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto shadow-inner">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold text-slate-800">Kuis Selesai! Luar Biasa!</h3>
+                        <p class="text-slate-600 text-sm max-w-md mx-auto">
+                            Kamu telah berhasil mengidentifikasi dan menganalisis perbedaan Iklan, Slogan, dan Poster dengan skor akhir:
+                        </p>
+                        <div class="text-4xl font-mono font-bold text-amber-500">${score} / ${quizData.length * 20}</div>
+                        <button onclick="restartQuiz()" class="mt-4 px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow-md transition">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Ulangi Kuis Analisis
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            const q = quizData[currentQuizIndex];
+            document.getElementById('quiz-progress').innerText = `${currentQuizIndex + 1} / ${quizData.length}`;
+
+            container.innerHTML = `
+                <div class="space-y-5">
+                    <div class="bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200">
+                        <span class="text-[11px] font-bold uppercase text-blue-600 bg-blue-100 px-2.5 py-1 rounded-md mb-2 inline-block">Kasus Soal #${currentQuizIndex + 1}</span>
+                        <p class="text-sm sm:text-base font-medium text-slate-800 leading-relaxed">${q.text}</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="quiz-options">
+                        ${q.options.map((opt, idx) => `
+                            <button onclick="checkAnswer(${idx})" class="quiz-opt-btn p-4 rounded-xl border-2 border-slate-200 hover:border-blue-500 bg-white hover:bg-blue-50/50 font-semibold text-sm text-slate-700 text-center transition flex flex-col items-center justify-center gap-2">
+                                <span class="w-7 h-7 rounded-full bg-slate-100 text-xs font-bold flex items-center justify-center text-slate-600">${String.fromCharCode(65 + idx)}</span>
+                                <span>${opt}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <div id="quiz-feedback" class="hidden p-4 rounded-xl text-xs font-medium"></div>
+                </div>
+            `;
+        }
+
+        // Check Answer Logic
+        function checkAnswer(selectedIndex) {
+            const q = quizData[currentQuizIndex];
+            const feedbackEl = document.getElementById('quiz-feedback');
+            const optionBtns = document.querySelectorAll('.quiz-opt-btn');
+
+            // Disable all buttons
+            optionBtns.forEach(btn => btn.disabled = true);
+
+            if (selectedIndex === q.correct) {
+                score += 20;
+                document.getElementById('quiz-score').innerText = score;
+                optionBtns[selectedIndex].classList.remove('border-slate-200', 'bg-white');
+                optionBtns[selectedIndex].classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+                
+                feedbackEl.className = "p-4 rounded-xl text-xs font-medium bg-emerald-50 text-emerald-900 border border-emerald-200 block";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 text-sm mr-1.5"></i> <strong>Jawaban Tepat!</strong> ${q.explanation}`;
+                showToast("Jawaban Benar! +20 Poin", "success");
+            } else {
+                optionBtns[selectedIndex].classList.remove('border-slate-200', 'bg-white');
+                optionBtns[selectedIndex].classList.add('border-rose-500', 'bg-rose-50', 'text-rose-800');
+                
+                optionBtns[q.correct].classList.remove('border-slate-200', 'bg-white');
+                optionBtns[q.correct].classList.add('border-emerald-500', 'bg-emerald-50');
+
+                feedbackEl.className = "p-4 rounded-xl text-xs font-medium bg-rose-50 text-rose-900 border border-rose-200 block";
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-600 text-sm mr-1.5"></i> <strong>Kurang Tepat.</strong> ${q.explanation}`;
+                showToast("Jawaban Belum Tepat!", "error");
+            }
+
+            // Append Next Button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = "mt-3 w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow transition flex items-center justify-center gap-2";
+            nextBtn.innerHTML = `<span>Soal Berikutnya</span> <i class="fa-solid fa-arrow-right"></i>`;
+            nextBtn.onclick = () => {
+                currentQuizIndex++;
+                renderQuiz();
+            };
+            feedbackEl.appendChild(nextBtn);
+        }
+
+        function restartQuiz() {
+            currentQuizIndex = 0;
+            score = 0;
+            document.getElementById('quiz-score').innerText = score;
+            renderQuiz();
+        }
+
+        // Studio Controls Logic
+        function setStudioType(type) {
+            studioState.type = type;
+            document.querySelectorAll('.st-type-btn').forEach(b => {
+                b.classList.remove('border-emerald-500', 'bg-emerald-50', 'text-emerald-700');
+                b.classList.add('border-slate-200', 'bg-white', 'text-slate-600');
+            });
+
+            const activeBtn = document.getElementById(`st-type-${type}`);
+            activeBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-600');
+            activeBtn.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-700');
+
+            // Hide/Show CTA input based on Slogan or Poster/Iklan
+            const ctaGroup = document.getElementById('cta-input-group');
+            if (type === 'slogan') {
+                ctaGroup.classList.add('opacity-50');
+            } else {
+                ctaGroup.classList.remove('opacity-50');
+            }
+
+            updateStudioPreview();
+        }
+
+        function setStudioIcon(iconClass) {
+            studioState.icon = iconClass;
+            updateStudioPreview();
+        }
+
+        function setStudioColor(colorClass) {
+            studioState.color = colorClass;
+            updateStudioPreview();
+        }
+
+        function applyPreset(presetKey) {
+            if (presetKey === 'lingkungan') {
+                studioState.headline = "JAGA BUMI, JAGA MASA DEPAN!";
+                studioState.body = "Satu sampah plastik yang kau buang sembarangan merusak ribuan harapan bumi bersih.";
+                studioState.icon = "fa-leaf";
+                studioState.color = "bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900 text-white";
+                studioState.cta = "Disajikan oleh: OSIS SMP Negeri 1";
+            } else if (presetKey === 'pendidikan') {
+                studioState.headline = "TIADA HARI TANPA PRESTASI!";
+                studioState.body = "Membaca adalah jembatan cita-cita. Buka bukumui hari ini untuk dunia besok.";
+                studioState.icon = "fa-book-bookmark";
+                studioState.color = "bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-900 text-white";
+                studioState.cta = "Dinas Pendidikan & Perpusda";
+            } else if (presetKey === 'kesehatan') {
+                studioState.headline = "SEHAT FISIK, HEBAT BERPIKIR!";
+                studioState.body = "Pilih camilan sehat di kantin sekolah. Kurangi gula, perbanyak senyum dan karya!";
+                studioState.icon = "fa-heart-pulse";
+                studioState.color = "bg-gradient-to-br from-amber-500 via-orange-600 to-red-700 text-white";
+                studioState.cta = "Kantin Sehat Sekolah";
+            } else if (presetKey === 'komersial') {
+                studioState.headline = "ES TEA SEGAR KANTIN PAK EDI";
+                studioState.body = "Haus setelah olahraga? Nikmati kesegaran alami teh melati asli. Hanya Rp3.000!";
+                studioState.icon = "fa-bottle-water";
+                studioState.color = "bg-white text-slate-800 border-4 border-slate-900";
+                studioState.cta = "Beli Sekarang di Stand 02!";
+            }
+
+            document.getElementById('st-headline').value = studioState.headline;
+            document.getElementById('st-body').value = studioState.body;
+            document.getElementById('st-cta').value = studioState.cta;
+
+            updateStudioPreview();
+        }
+
+        function updateStudioPreview() {
+            // Read values
+            studioState.headline = document.getElementById('st-headline').value || 'JUDUL KARYA';
+            studioState.body = document.getElementById('st-body').value || 'Pesan utama...';
+            studioState.cta = document.getElementById('st-cta').value || 'Nama Pembuat / CTA';
+
+            // DOM elements
+            const canvas = document.getElementById('studio-canvas');
+            const badge = document.getElementById('preview-badge');
+            const iconEl = document.getElementById('preview-icon');
+            const headlineEl = document.getElementById('preview-headline');
+            const bodyEl = document.getElementById('preview-body');
+            const ctaEl = document.getElementById('preview-cta');
+
+            // Apply Classes
+            canvas.className = `w-full max-w-sm aspect-[3/4] ${studioState.color} rounded-2xl shadow-2xl p-6 flex flex-col justify-between items-center text-center relative overflow-hidden transition-all duration-300`;
+            
+            badge.innerText = `${studioState.type.toUpperCase()} KREATIF`;
+            iconEl.className = `fa-solid ${studioState.icon} text-5xl sm:text-6xl`;
+            headlineEl.innerText = studioState.headline;
+            bodyEl.innerText = studioState.body;
+            ctaEl.innerText = studioState.cta;
+
+            // Update Checklist Evaluation
+            const evalList = document.getElementById('eval-check-list');
+            evalList.innerHTML = `
+                <span class="${studioState.headline.length > 3 ? 'text-emerald-600 font-semibold' : 'text-slate-400'}"><i class="fa-solid fa-check"></i> Judul Menarik</span>
+                <span class="${studioState.icon ? 'text-emerald-600 font-semibold' : 'text-slate-400'}"><i class="fa-solid fa-check"></i> Unsur Visual</span>
+                <span class="${studioState.body.length > 10 ? 'text-emerald-600 font-semibold' : 'text-slate-400'}"><i class="fa-solid fa-check"></i> Pesan Ringkas</span>
+                <span class="${studioState.type !== 'slogan' ? 'text-emerald-600 font-semibold' : 'text-slate-400'}"><i class="fa-solid fa-check"></i> Panggilan Aksi</span>
+            `;
+        }
+
+        function resetStudio() {
+            applyPreset('lingkungan');
+            showToast("Studio telah direset ke default.", "info");
+        }
+
+        // Toast Notification Helper
+        function showToast(message, type = "success") {
+            const toast = document.getElementById('toast-msg');
+            const text = document.getElementById('toast-text');
+            const icon = document.getElementById('toast-icon');
+
+            text.innerText = message;
+            if (type === "success") {
+                icon.className = "fa-solid fa-circle-check text-emerald-400 text-lg";
+            } else if (type === "error") {
+                icon.className = "fa-solid fa-circle-xmark text-rose-400 text-lg";
+            } else {
+                icon.className = "fa-solid fa-circle-info text-blue-400 text-lg";
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Initialize on Window Load
+        window.onload = function () {
+            showConceptDetail('iklan');
+            updateStudioPreview();
+        };
+    </script>
+</body>
+</html>
